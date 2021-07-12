@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .el-button{
     background-color: $bg-color-blue;
     border-color: $bg-color-blue;

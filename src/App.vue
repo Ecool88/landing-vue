@@ -1,26 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-      <div class="wrapper-btn">
-        <vBtn :title="'Связаться с нами'"/>
-      </div>
-    <div class="example-image">
+<!--    <img alt="Vue logo" src="./assets/logo.png">-->
+<!--      <div class="wrapper-btn">-->
+<!--        <vBtn :title="'Связаться с нами'"/>-->
+<!--      </div>-->
+<!--    <div class="example-image">-->
 
-    </div>
-    <div class="repeat-circle">
+<!--    </div>-->
+<!--    <div class="repeat-circle">-->
 
-    </div>
+<!--    </div>-->
+    <main-screen />
   </div>
 
 </template>
 
 <script>
-import vBtn from './components/elements/el-button'
+// import vBtn from './components/elements/el-button'
+import mainScreen from "./components/mainScreen/mainScreen";
 
 export default {
   name: 'App',
   components: {
-    vBtn
+    // vBtn
+    mainScreen
   }
 }
 </script>
