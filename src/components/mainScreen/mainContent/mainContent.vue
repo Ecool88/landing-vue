@@ -1,40 +1,38 @@
 <template>
-  <section class="content-block">
-    <div class="body">
-      <header>
-        <nav class="navbar">
+  <section class="main-block">
+    <div class="main-block__content">
+      <nav class="main-block__header navbar">
+
           <a href="#" class="navbar__brand">
-            <img src="../../../assets/images/logo.svg" class="brand__logo" alt="logo">
+            <img src="../../../assets/images/logo.svg" class="navbar__logo" alt="logo">
           </a>
 
-          <div class="navbar__container">
-            <ul class="navbar__nav">
-              <li class="nav__item">
-                <a href="#" class="nav__link">Решения и услуги</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Проекты</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Контакты</a>
-              </li>
-            </ul>
-          </div>
+          <ul class="navbar__items">
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Решения и услуги</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Проекты</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Контакты</a>
+            </li>
+          </ul>
 
-        </nav>
-      </header>
-      <div class="solutions-block">
-        <div class="solutions-block__container">
-          <h2 class="solutions-block__title">IT-решения для бизнеса</h2>
-          <div class="solutions-block__subtitle">Повышаем эффективность бизнеса наших клиентов
+      </nav>
+
+      <div class="main-block__slogan slogan-block">
+        <div class="slogan-block__container">
+          <h2 class="slogan-block__title">IT-РЕШЕНИЯ ДЛЯ БИЗНЕСА</h2>
+          <div class="slogan-block__subtitle">Повышаем эффективность бизнеса наших клиентов
             за счет внедрения качественных и современных решений</div>
         </div>
-        <el-counter class="counter" :counter="'01'"/>
+        <el-counter class="slogan-block__counter" :counter="'01'" :color-white="true"/>
       </div>
     </div>
-    <div class="news">
-      <div class="news__title">Последние новости</div>
-      <div class="news__box">
+    <div class="main-block__news item-news">
+      <h5 class="item-news__title">Последние новости</h5>
+      <div class="item-news__box">
         <news-content
           :date="'17/09'"
           :subtitle="'Мы создали EasyDoc'"
@@ -65,51 +63,53 @@ export default {
 
 <style lang="scss" scoped>
 
-header{
-  position: absolute;
-  top: 50px;
-  left: 100px;
-  z-index: 1;
+.main-block{
+  width: 1287px;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+
+  &__header{
+    position: absolute;
+    top: 40px;
+    left: 95px;
+    z-index: 1;
+  }
 }
 
 .navbar{
-  width: 650px;
+  width: 675px;
   height: auto;
   display: flex;
   justify-content: space-between;
 
-  &__nav{
+  &__items{
     display: flex;
-    justify-content: space-between;
+    width: 435px;
+    margin-top: 5px;
   }
-}
 
-.nav{
-  &__item{
-    margin-right: 50px;
+  &__item:not(:first-child){
+    margin-left: 55px;
   }
 
   &__link{
-    font-size: 13px;
+    font-size: 14px;
     color: $text-white;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: .6px;
+  }
+
+  &__logo{
+    width: 84px;
+    height: 54px;
   }
 }
 
 
-.content-block{
-  width: 67%;
-  height: 100%;
-  display: inline-block;
-  position: relative;
-}
-
-
-
-.solutions-block{
+.slogan-block{
   background: url("../../../assets/images/solutions-for-bussines.png") right center no-repeat;
   background-color: #000000;
-  width: 100%;
   height: 646px;
   position: relative;
   display: flex;
@@ -118,8 +118,8 @@ header{
 
   &::after{
     content: '';
-    border-bottom: 147px solid #FFFFFF;
-    border-left: 147px solid transparent;
+    border-bottom: 145px solid #FFFFFF;
+    border-left: 145px solid transparent;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -129,32 +129,42 @@ header{
     content: '';
     display: block;
     position: absolute;
-    top: 487px;
+    top: 483px;
     right: 0;
     bottom: 0;
-    left: 1127px;
+    left: 1123px;
     pointer-events: none;
-    background: radial-gradient(circle, rgba(192, 182, 255, .6) 5px, transparent 10%);
-    background-size:20px 20px;
+    background: radial-gradient(circle, rgba(192, 182, 255, 0.6) 3px, transparent 10%);
+    background-size: 21px 21px;
   }
 
   &__container{
     display: flex;
     flex-direction: column;
-    width: 600px;
-    height: auto;
+    width: 755px;
+    margin-top: 40px;
   }
 
   &__title{
     color: $text-white;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 37px;
+    letter-spacing: 4px;
+    font-weight: 800;
+  }
+
+  &__counter{
+    position: absolute;
+    bottom: 67px;
+    left: 108px;
   }
 
   &__subtitle{
+    width: 600px;
     color: $text-white;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
+    margin: 10px 0 0 10px;
+
 
     &::before{
       content: '';
@@ -166,24 +176,18 @@ header{
   }
 }
 
-.counter{
-  position: absolute;
-  bottom: 65px;
-  left: 110px;
-}
+.item-news{
+  padding: 65px 150px 0 180px;
 
-.news{
-  height: 324px;
-  padding: 60px 150px 0 150px;
+
+  &__title{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
 
   &__box{
     display: flex;
   }
-
-  &__title{
-    font-size: 19px;
-    font-weight: bold;
-  }
 }
-
 </style>

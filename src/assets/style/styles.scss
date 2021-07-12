@@ -35,8 +35,12 @@ html, body {
 
 
 body {
-  font-family: $font-family;
   width: 1920px;
+  font-family: $font-family;
+  font-size: 20px;
+  color: $text-primary;
+  background: #FFF;
+  //line-height: 1.4;
 }
 
 
@@ -51,6 +55,7 @@ ol, li {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 input, textarea {

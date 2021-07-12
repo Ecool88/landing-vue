@@ -1,9 +1,9 @@
 <template>
-  <div class="news__container">
+  <article class="news__container">
     <span class="news__date">{{date}}</span>
     <div class="news__subtitle">{{subtitle}}</div>
     <div class="news__content">{{content}}</div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -32,20 +32,25 @@ export default {
       width: 450px;
       display: flex;
       flex-direction: column;
+      margin-left: 25px;
     }
 
     &__date{
-      margin-top: 20px;
+      font-size: 14px;
+      margin-top: 15px;
     }
 
     &__subtitle{
-      margin-top: 20px;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 17px;
+      margin-top: 10px;
+      letter-spacing: 2px;
     }
 
     &__content{
-      margin: 20px 0 0 20px;
+      margin: 13px 0 0 33px;
       width: 365px;
+      font-size: 14px;
     }
 
   }

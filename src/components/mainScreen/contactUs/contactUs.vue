@@ -1,60 +1,62 @@
 <template>
-  <section>
-    <div class="header__contact">
-      <ul class="contact">
-        <li class="contact__item">
-          <a href="#" class="contact__link">
-            <img src="../../../assets/icons/mail.png" alt="#" class="contact__icon">
-            <span class="contact__text">mail@itfbgroup.ru</span>
+  <section class="contact">
+    <div class="contact-header">
+      <ul class="contact-header__items">
+        <li class="contact-header__item">
+          <a href="#" class="contact-header__link">
+            <img src="../../../assets/icons/mail.png" alt="#" class="contact-header__icon">
+            <span class="contact-header__text">mail@itfbgroup.ru</span>
           </a>
         </li>
-        <li class="contact__item">
-          <a href="#" class="contact__link">
-            <img src="../../../assets/icons/phone.png" alt="#" class="contact__icon">
-            <span class="contact__text">+7 495 234-61-42</span>
+        <li class="contact-header__item">
+          <a href="#" class="contact-header__link">
+            <img src="../../../assets/icons/phone.png" alt="#" class="contact-header__icon">
+            <span class="contact-header__text">+7 495 234-61-42</span>
           </a>
         </li>
-        <li class="contact__item">
-          <a href="#" class="contact__link">
-            <img src="../../../assets/icons/location.png" alt="#" class="contact__icon">
-            <span class="contact__text">Москва, ул. Малая Семеновская д.11 к.4</span>
+        <li class="contact-header__item">
+          <a href="#" class="contact-header__link">
+            <img src="../../../assets/icons/location.png" alt="#" class="contact-header__icon">
+            <span class="contact-header__text">Москва, ул. Малая Семеновская д.11 к.4</span>
           </a>
         </li>
       </ul>
-      <span class="hamburger__menu">
-        <span class="hamburger__item"></span>
-        <span class="hamburger__item"></span>
-        <span class="hamburger__item"></span>
+      <span class="contact-header__menu hamburger-menu">
+        <span class="hamburger-menu__item"></span>
+        <span class="hamburger-menu__item"></span>
+        <span class="hamburger-menu__item"></span>
       </span>
     </div>
 
-    <form action="" class="form">
-      <h5 class="form__title">Связь с нами</h5>
+    <form action="" class="contact-form">
+      <legend class="contact-form__title">Связь с нами</legend>
 
-      <div class="form__item">
-        <label class="form__label" >Имя</label>
-        <input type="text" class="form__input">
-      </div>
+      <ul class="contact-form__items">
+        <li class="contact-form__item">
+          <label class="contact-form__label" >Имя</label>
+          <input type="text" class="contact-form__input">
+        </li>
 
-      <div class="form__item">
-        <label class="form__label" >E-mail</label>
-        <input type="text" class="form__input">
-      </div>
+        <li class="contact-form__item">
+          <label class="contact-form__label" >E-mail</label>
+          <input type="text" class="contact-form__input">
+        </li>
 
-      <div class="form__item">
-        <label class="form__label" >Телефон</label>
-        <input type="text" class="form__input">
-      </div>
+        <li class="contact-form__item">
+          <label class="contact-form__label" >Телефон</label>
+          <input type="text" class="contact-form__input">
+        </li>
 
 
-      <div class="form__item">
-        <label class="form__label" >Комментарий</label>
-        <input type="text" class="form__input">
-      </div>
+        <li class="contact-form__item">
+          <label class="contact-form__label" >Комментарий</label>
+          <input type="text" class="contact-form__input">
 
-      <span class="comment-length">0 / 120</span>
+        </li>
+      </ul>
 
-      <el-button :title="'Отправить'"/>
+
+      <el-button class="contact-form__btn" :title="'Отправить'"/>
 
     </form>
   </section>
@@ -71,102 +73,115 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  section {
-    width: 33%;
-    display: inline-block;
-    padding: 10px 55px;
-  }
-
-  .header__contact{
-    display: flex;
-  }
-
   .contact {
-    width: 420px;
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    width: 633px;
+    display: inline-block;
+    padding: 50px 80px;
 
-    &__link {
-      color: $text-primary;
-      line-height: 25px;
 
-      &:first-child{
-        margin-right: 40px;
+    &-header{
+      display: flex;
+
+      &__items{
+        width: 420px;
+        height: 90px;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
       }
-     }
 
-    &__icon {
-      width: 14px;
-      height: 14px;
-      margin-right: 16px;
+      &__link {
+        color: $text-primary;
+        line-height: 25px;
+
+        &:first-child{
+          margin-right: 40px;
+        }
+      }
+
+      &__icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 16px;
 
 
+      }
+
+      &__text{
+        font-size: 15px;
+        font-weight: 400;
+      }
     }
 
-    &__text{
-      font-size: 15px;
-      font-weight: 500;
+    &-form{
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 90px;
+
+      &__title{
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      &__items{
+        width: 395px;
+      }
+
+      &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        height: 30px;
+        position: relative;
+        margin-top: 50px;
+
+        &:last-child::after{
+          content: '0 / 120';
+          font-size: 12px;
+          color: $text-primary;
+        }
+      }
+
+      &__label{
+        position: absolute;
+        bottom: 20px;
+        font-size: 17px;
+      }
+
+      &__input{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $text-primary;
+      }
+
+      &__btn{
+        margin-top: 70px;
+        width: 395px;
+        height: 65px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
     }
   }
 
-  .hamburger{
-    &__menu{
+
+  .hamburger-menu{
       width: 25px;
       height: 16px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin-top: 20px;
-    }
+      margin-top: 9px;
+      margin-left: 27px;
+
     &__item{
       background-color: $text-primary;
       width: 100%;
       height: 2px;
     }
   }
-
-  .form{
-    width: 395px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    &__title{
-      font-size: 26px;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    &__item{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      width: 100%;
-      height: 30px;
-      position: relative;
-      margin-top: 50px;
-    }
-
-    &__label{
-      position: absolute;
-      bottom: 20px;
-      font-size: 16px;
-      color: $text-primary;
-    }
-
-    &__input{
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid $text-primary;
-    }
-  }
-
-  .comment-length{
-    margin-bottom: 10px;
-  }
-
-
 </style>

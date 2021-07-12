@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss" scoped>
   .el-button{
+    letter-spacing: inherit;
     background-color: $bg-color-blue;
     border-color: $bg-color-blue;
     color: $text-white;
@@ -29,8 +30,11 @@ export default {
     width: 100%;
     font-weight: inherit;
     font-size: inherit;
+    cursor: pointer;
+    font-weight: 600;
   }
   span{
+    letter-spacing: inherit;
     margin: auto;
     padding: 15px 35px;
     font-weight: inherit;
