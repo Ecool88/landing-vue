@@ -1,5 +1,5 @@
 <template>
-  <button class="el-button">
+  <button @click="clickButton()" class="el-button">
       <span>{{title}}</span>
   </button>
 </template>
@@ -14,6 +14,11 @@ export default {
     title: {
       type: String,
       default: 'button'
+    }
+  },
+  methods: {
+    clickButton(){
+      alert(`Вы кликнули на кнопку ${this.title.toUpperCase()}`)
     }
   }
 }

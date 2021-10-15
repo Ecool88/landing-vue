@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="footer__go-up">
+    <div @click="goUp()" class="footer__go-up">
       <div class="go-up__title">Наверх</div>
       <div class="go-up__arrow"></div>
     </div>
@@ -19,6 +19,11 @@ export default {
   components: {
     navFooter,
     descriptionFooter
+  },
+  methods: {
+    goUp() {
+      window.scrollTo(0, 0)
+    }
   }
 }
 </script>
@@ -42,6 +47,7 @@ export default {
       bottom: 182px;
       left: 76px;
       transform: rotate(270deg);
+      cursor: pointer;
     }
 
 
